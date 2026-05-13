@@ -463,7 +463,17 @@ const BusinessDataPage = () => {
                 <h3 className="text-lg font-medium text-gray-900">Why is this information needed?</h3>
                 <div className="mt-2 text-sm text-gray-600">
                   <p>These business metrics help our AI model analyze your business's financial health and risk factors. The more accurate and complete your data is, the more precise our risk assessment and recommendations will be.</p>
-                  <p className="mt-2">All your data is securely encrypted and never shared with third parties. Read our <a href="#" className="text-blue-600 hover:text-blue-800">privacy policy</a> for more details.</p>
+                  <p className="mt-2">
+                    All your data is securely encrypted and never shared with third parties. Read our{' '}
+                    <button
+                      type="button"
+                      onClick={() => alert('Privacy policy page will be added soon.')}
+                      className="text-blue-600 hover:text-blue-800"
+                    >
+                      privacy policy
+                    </button>{' '}
+                    for more details.
+                  </p>
                 </div>
               </div>
             </div>

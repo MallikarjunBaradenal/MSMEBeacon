@@ -81,13 +81,6 @@ const HomePage = () => {
     return 'High';
   };
 
-  // Function to determine risk color for gradient
-  const getRiskGradient = (score) => {
-    if (score < 40) return 'from-green-500 to-emerald-600';
-    if (score < 70) return 'from-yellow-500 to-orange-600';
-    return 'from-red-500 to-rose-600';
-  };
-
   if (loading) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50 flex flex-col justify-center items-center">

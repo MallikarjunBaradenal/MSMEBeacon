@@ -5,7 +5,7 @@ import Header from '../components/Header';
 
 const RiskPredictionPage = () => {
   const [loading, setLoading] = useState(true);
-  const [riskData, setRiskData] = useState({
+  const [riskData] = useState({
     riskScore: 65,
     riskLevel: 'Medium',
     factors: [
@@ -78,13 +78,6 @@ const RiskPredictionPage = () => {
     if (score < 40) return 'Low';
     if (score < 70) return 'Medium';
     return 'High';
-  };
-
-  // Function to get impact color
-  const getImpactColor = (impact) => {
-    if (impact === 'Low') return 'text-green-600';
-    if (impact === 'Medium') return 'text-yellow-600';
-    return 'text-red-600';
   };
 
   // Function to get impact badge style
@@ -220,13 +213,14 @@ const RiskPredictionPage = () => {
                         This assessment evaluates your business's survival risk based on multiple factors including financial health, market conditions, and operational efficiency.
                       </p>
                       
-                      <div className="mt-4 p-4 rounded-lg border border-l-4 
-                        ${riskData.riskScore < 40 
-                          ? 'border-green-400 bg-green-50' 
-                          : riskData.riskScore < 70 
-                            ? 'border-yellow-400 bg-yellow-50' 
-                            : 'border-red-400 bg-red-50'
-                        }"
+                      <div
+                        className={`mt-4 p-4 rounded-lg border border-l-4 ${
+                          riskData.riskScore < 40
+                            ? 'border-green-400 bg-green-50'
+                            : riskData.riskScore < 70
+                              ? 'border-yellow-400 bg-yellow-50'
+                              : 'border-red-400 bg-red-50'
+                        }`}
                       >
                         {riskData.riskScore >= 70 ? (
                           <p className="text-red-800 font-medium">

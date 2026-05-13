@@ -163,12 +163,6 @@ const HelpSupportPage = () => {
     return matchesSearch && matchesCategory;
   });
 
-  // Framer motion variants for FAQ accordion
-  const accordionVariants = {
-    hidden: { opacity: 0, height: 0 },
-    visible: { opacity: 1, height: 'auto', transition: { duration: 0.3 } }
-  };
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
       <Header />

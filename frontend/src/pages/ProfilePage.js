@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 
 const ProfilePage = () => {
-  const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
   const [editMode, setEditMode] = useState(false);
   const [user, setUser] = useState({

@@ -8,7 +8,7 @@ const LoginPage = () => {
     email: '',
     password: ''
   });
-  const [error, setError] = useState('');
+  const [error] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
   // Framer motion variants
@@ -166,9 +166,13 @@ const LoginPage = () => {
               </div>
 
               <div className="text-sm">
-                <a href="#" className="font-medium text-blue-600 hover:text-blue-500 transition-colors duration-200">
+                <button
+                  type="button"
+                  onClick={() => alert('Password reset flow will be added soon.')}
+                  className="font-medium text-blue-600 hover:text-blue-500 transition-colors duration-200"
+                >
                   Forgot your password?
-                </a>
+                </button>
               </div>
             </motion.div>
 
