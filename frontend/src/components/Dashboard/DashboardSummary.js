@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { apiUrl } from '../../config/api';
 
 const DashboardSummary = () => {
   const [dashboardData, setDashboardData] = useState(null);
@@ -10,7 +11,7 @@ const DashboardSummary = () => {
     const fetchDashboardData = async () => {
       try {
         setLoading(true);
-        const response = await axios.get('http://localhost:5000/dashboard-data');
+        const response = await axios.get(apiUrl('/dashboard-data'));
         setDashboardData(response.data);
         setError(null);
       } catch (err) {

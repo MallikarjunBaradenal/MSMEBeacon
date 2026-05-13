@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { apiUrl } from '../../config/api';
 
 const PredictorForm = ({ setLoading, setPrediction }) => {
   const [formData, setFormData] = useState({
@@ -57,7 +58,7 @@ const PredictorForm = ({ setLoading, setPrediction }) => {
     
     try {
       setLoading(true);
-      const response = await axios.post('http://localhost:5000/predict-manual', numericData);
+      const response = await axios.post(apiUrl('/predict-manual'), numericData);
       setPrediction(response.data);
     } catch (error) {
       console.error('Error making prediction:', error);

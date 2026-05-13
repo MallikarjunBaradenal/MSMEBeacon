@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import axios from 'axios';
+import { apiUrl } from '../../config/api';
 
 const BulkUpload = ({ setLoading, setBulkPredictions }) => {
   const [file, setFile] = useState(null);
@@ -38,7 +39,7 @@ const BulkUpload = ({ setLoading, setBulkPredictions }) => {
     
     try {
       setLoading(true);
-      const response = await axios.post('http://localhost:5000/predict-bulk', formData, {
+      const response = await axios.post(apiUrl('/predict-bulk'), formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }

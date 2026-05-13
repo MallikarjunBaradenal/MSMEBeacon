@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Header from '../components/Header';
+import { apiUrl } from '../config/api';
 
 const HomePage = () => {
   const [loading, setLoading] = useState(true);
@@ -35,7 +36,7 @@ const HomePage = () => {
     const fetchData = async () => {
       try {
         console.log('Fetching dashboard data...');
-        const response = await fetch('http://localhost:5000/get-stats');
+        const response = await fetch(apiUrl('/get-stats'));
         const data = await response.json();
         
         if (data.error) {

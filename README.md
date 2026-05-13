@@ -75,6 +75,16 @@ npm install
 npm start
 ```
 
+### Vercel Deployment Notes
+
+If you deploy the frontend to Vercel, set this environment variable in your Vercel project settings:
+
+```bash
+REACT_APP_API_BASE_URL=https://your-backend-domain.com
+```
+
+Use your deployed backend URL. Without this value, frontend API calls may fail in production.
+
 ## Usage
 
 Once both servers are running:
